@@ -1,0 +1,55 @@
+<div class="row">
+    <div class="col-md-12">
+        <div id="modal" class="modal hide fade">
+            <div class="modal-header">
+                <h3>COCOHub Translation tutorial</h3>
+            </div>
+            <div id="0" class="modal-body" style="display:none">
+                <p><strong>Hi!</strong> This is a <strong>volunteer
+                project</strong> that enables us to translate the
+                MS-COCO dataset to underresourced languages.
+               </p>
+            </div>
+            <div id="1" class="modal-body" style="display:none">
+                <p>The application is really simple. It loads a string
+                from the MS-COCO dataset, and asks you to translate it
+                to another language</p>
+                <p>All you have to do is to write the translation, and
+                click the save button when you are done.</p>
+            </div>
+            <div class="modal-footer">
+                <a id="prevBtn" href="#" onclick="showStep('prev')" class="btn">Previous</a>
+                <a id="nextBtn" href="#" onclick="showStep('next')" class="btn btn-success">Next</a>
+                <a id="startContrib" href="../{{language}}/newtask" class="btn
+                    btn-primary" style="display:none"><i class="fa fa-thumbs-o-up"></i> Start Translating!</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var step = -1;
+    function showStep(action) {
+        $("#" + step).hide();
+        if (action == 'next') {
+            step = step + 1;
+        }
+        if (action == 'prev') {
+            step = step - 1;
+        }
+        if (step == 0) {
+            $("#prevBtn").hide();
+        }
+        else {
+            $("#prevBtn").show();
+        }
+
+        if (step == 1 ) {
+            $("#nextBtn").hide();
+            $("#startContrib").show();
+        }
+        $("#" + step).show();
+    }
+
+    showStep('next');
+    $("#modal").modal('show');
+</script>
