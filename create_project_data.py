@@ -18,8 +18,7 @@ def create_cocohub_project_metadata(language):
     project_info = {
         "name": "{} Language Project".format(language),
         "short_name": "{}".format(language),
-        "description": "We are translating MS-COCO captions to {}".format(language),
-        "question": "Translate this sentence to {}".format(language)
+        "description": "We are translating MS-COCO captions to {}".format(language)
     }
     with open(f'project.json', 'w') as project_file:
         json.dump(project_info, project_file)
