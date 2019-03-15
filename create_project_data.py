@@ -6,15 +6,6 @@ import csv
 import click
 from jinja2 import Template
 
-# engine = create_engine('postgresql+psycopg2://postgres:QFUNjRBiK9j1NwlaSPZO@localhost/babelsama_dev')
-# metadata = MetaData()
-# captions = Table('captions', metadata, autoload=True, autoload_with=engine)
-# dl = []
-# for anno in annotations:
-#     anno['inserted_at'] = datetime.now()
-#     anno['updated_at'] = datetime.now()
-#     dl.append(anno)
-# engine.execute(captions.insert(), dl)
 val_cap = 'captions/captions_val2017.json'
 trn_cap = 'captions/captions_train2017.json'
 task_template = 'template.html'
