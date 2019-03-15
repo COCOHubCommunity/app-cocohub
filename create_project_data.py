@@ -21,9 +21,8 @@ def create_cocohub_project_metadata(language):
         "description": "We are translating MS-COCO captions to {}".format(language),
         "question": "Translate this sentence to {}".format(language)
     }
-    if not os.path.isfile(f"projects/{language}_project.json"):
-        with open(f'project.json', 'w') as project_file:
-            json.dump(project_info, project_file)
+    with open(f'project.json', 'w') as project_file:
+        json.dump(project_info, project_file)
     if os.path.isfile(f"project.json"):
         print(f"project file created: project.json")
 
