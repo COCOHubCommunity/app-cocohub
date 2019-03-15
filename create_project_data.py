@@ -53,6 +53,7 @@ def create_cocohub_project_metadata(language):
             for row in coco_captions:
                 row.update({'question': project_info['question']})
                 csvwriter.writerow(row)
+        print(f"Success! {language} file created.")
     else:
         print(f'Project files for {language} exist.. moving on')
 
