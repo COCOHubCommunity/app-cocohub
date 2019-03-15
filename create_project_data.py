@@ -24,6 +24,8 @@ def create_cocohub_project_metadata(language):
     if not os.path.isfile(f"projects/{language}_project.json"):
         with open(f'projects/{language}_project.json', 'w') as project_file:
             json.dump(project_info, project_file)
+    if os.path.isfile(f"projects/{language}_project.json"):
+        print(f"project file created: {language}_project.json")
 
     if not os.path.isfile(f"projects/{language}_template.html"):
         tmp = Template(open(task_template, 'r').read())
