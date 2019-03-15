@@ -8,9 +8,9 @@ from jinja2 import Template
 
 val_cap = 'captions/captions_val2017.json'
 trn_cap = 'captions/captions_train2017.json'
-task_template = 'template.html'
-tutorial_template = 'tutorial.html'
-ldesc_template = 'long_description.md'
+task_template = 'templates/template.html'
+tutorial_template = 'templates/tutorial.html'
+ldesc_template = 'templates/long_description.md'
 
 @click.command()
 @click.option('--language', help='Language project to create', prompt='Language project')
@@ -22,27 +22,27 @@ def create_cocohub_project_metadata(language):
         "question": "Translate this sentence to {}".format(language)
     }
     if not os.path.isfile(f"projects/{language}_project.json"):
-        with open(f'projects/{language}_project.json', 'w') as project_file:
+        with open(f'project.json', 'w') as project_file:
             json.dump(project_info, project_file)
-    if os.path.isfile(f"projects/{language}_project.json"):
-        print(f"project file created: {language}_project.json")
+    if os.path.isfile(f"project.json"):
+        print(f"project file created: project.json")
 
-    if not os.path.isfile(f"projects/{language}_template.html"):
+    if not os.path.isfile(f"template.html"):
         tmp = Template(open(task_template, 'r').read())
         result = tmp.render(language=language)
-        with open(f'projects/{language}_template.html', 'w') as f:
+        with open(f'template.html', 'w') as f:
             f.write(result)
 
-    if not os.path.isfile(f"projects/{language}_tutorial.html"):
+    if not os.path.isfile(f"tutorial.html"):
         tmp = Template(open(tutorial_template, 'r').read())
         result = tmp.render(language=language)
-        with open(f'projects/{language}_tutorial.html', 'w') as f:
+        with open(f'tutorial.html', 'w') as f:
             f.write(result)
 
-    if not os.path.isfile(f"projects/{language}_long_description.md"):
+    if not os.path.isfile(f"long_description.md"):
         tmp = Template(open(tutorial_template, 'r').read())
         result = tmp.render(language=language)
-        with open(f'projects/{language}_long_description.md', 'w') as f:
+        with open(f'long_description.md', 'w') as f:
             f.write(result)
 
 
