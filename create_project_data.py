@@ -34,7 +34,26 @@ def create_cocohub_project_metadata(language):
         with open(f'projects/{language}_project.json', 'w') as project_file:
             json.dump(project_info, project_file)
 
-    field_names = ['question', 'image_id', 'id', 'caption']
+    if not os.path.isfile(f"projects/{language}_template.html"):
+        tmp = Template(open(task_template, 'r').read())
+        result = tmp.render(language=language)
+        with open(f'projects/{language}_template.html', 'w') as f:
+            f.write(result)
+
+    if not os.path.isfile(f"projects/{language}_tutorial.html"):
+        tmp = Template(open(tutorial_template, 'r').read())
+        result = tmp.render(language=language)
+        with open(f'projects/{language}_tutorial.html', 'w') as f:
+            f.write(result)
+
+    if not os.path.isfile(f"projects/{language}_long_description.md"):
+        tmp = Template(open(tutorial_template, 'r').read())
+        result = tmp.render(language=language)
+        with open(f'projects/{language}_long_description.md', 'w') as f:
+            f.write(result)
+
+
+    field_names = ['question', 'caption_id', 'image_id', 'id', 'caption']
     if not os.path.isfile(f"projects/{language}_tasks.csv"):
         with open(f'projects/{language}_tasks.csv', 'w') as task_file:
             csvwriter = csv.DictWriter(task_file, delimiter=',', fieldnames=field_names)
