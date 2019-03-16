@@ -11,6 +11,8 @@ trn_cap = 'captions/captions_train2017.json'
 task_template = 'templates/template.html'
 tutorial_template = 'templates/tutorial.html'
 ldesc_template = 'templates/long_description.md'
+results_html_template = 'templates/results.html'
+results_js_template = 'templates/results.js'
 
 @click.command()
 @click.option('--language', help='Language project to create', prompt='Language project')
@@ -41,6 +43,18 @@ def create_cocohub_project_metadata(language):
         tmp = Template(open(tutorial_template, 'r').read())
         result = tmp.render(language=language)
         with open(f'long_description.md', 'w') as f:
+            f.write(result)
+
+    if not os.path.isfile(f"results.html"):
+        tmp = Template(open(results_html_template, 'r').read())
+        result = tmp.render(language=language)
+        with open(f'results.html', 'w') as f:
+            f.write(result)
+
+    if not os.path.isfile(f"results.js"):
+        tmp = Template(open(results_js_template, 'r').read())
+        result = tmp.render(language=language)
+        with open(f'results.js', 'w') as f:
             f.write(result)
 
 
