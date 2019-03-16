@@ -20,7 +20,7 @@ def create_cocohub_project_metadata(language):
     project_info = {
         "name": f"{language} Language Project",
         "short_name": f"{language}",
-        "description": f"We are translating MS-COCO captions to {langauge}",
+        "description": f"We are translating MS-COCO captions to {language}",
         "question": f"What is the {language} translation of this sentence?"
     }
     with open(f'project.json', 'w') as project_file:
