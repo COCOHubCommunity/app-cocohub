@@ -9,5 +9,5 @@ tasks="$language"_tasks.csv
 python create_project_data.py --language $language && \
     pbs create_project && \
     pbs update_project && \
-    pbs add_tasks --task-file projects/$tasks && \
+    pbs add_tasks --tasks-file projects/$tasks && \
     rm projects/$tasks
