@@ -28,35 +28,30 @@ def create_cocohub_project_metadata(language):
     if os.path.isfile(f"project.json"):
         print(f"project file created: project.json")
 
-    if not os.path.isfile(f"template.html"):
-        tmp = Template(open(task_template, 'r').read())
-        result = tmp.render(language=language)
-        with open(f'template.html', 'w') as f:
-            f.write(result)
+    tmp = Template(open(task_template, 'r').read())
+    result = tmp.render(language=language)
+    with open(f'template.html', 'w') as f:
+        f.write(result)
 
-    if not os.path.isfile(f"tutorial.html"):
-        tmp = Template(open(tutorial_template, 'r').read())
-        result = tmp.render(language=language)
-        with open(f'tutorial.html', 'w') as f:
-            f.write(result)
+    tmp = Template(open(tutorial_template, 'r').read())
+    result = tmp.render(language=language)
+    with open(f'tutorial.html', 'w') as f:
+        f.write(result)
 
-    if not os.path.isfile(f"long_description.md"):
-        tmp = Template(open(tutorial_template, 'r').read())
-        result = tmp.render(language=language)
-        with open(f'long_description.md', 'w') as f:
-            f.write(result)
+    tmp = Template(open(tutorial_template, 'r').read())
+    result = tmp.render(language=language)
+    with open(f'long_description.md', 'w') as f:
+        f.write(result)
 
-    if not os.path.isfile(f"results.html"):
-        tmp = Template(open(results_html_template, 'r').read())
-        result = tmp.render(language=language)
-        with open(f'results.html', 'w') as f:
-            f.write(result)
+    tmp = Template(open(results_html_template, 'r').read())
+    result = tmp.render(language=language)
+    with open(f'results.html', 'w') as f:
+        f.write(result)
 
-    if not os.path.isfile(f"results.js"):
-        tmp = Template(open(results_js_template, 'r').read())
-        result = tmp.render(language=language)
-        with open(f'results.js', 'w') as f:
-            f.write(result)
+    tmp = Template(open(results_js_template, 'r').read())
+    result = tmp.render(language=language)
+    with open(f'results.js', 'w') as f:
+        f.write(result)
 
 
     field_names = ['question', 'caption_id', 'image_id', 'id', 'caption']
