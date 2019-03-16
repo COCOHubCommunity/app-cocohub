@@ -18,9 +18,10 @@ results_js_template = 'templates/results.js'
 @click.option('--language', help='Language project to create', prompt='Language project')
 def create_cocohub_project_metadata(language):
     project_info = {
-        "name": "{} Language Project".format(language),
-        "short_name": "{}".format(language),
-        "description": "We are translating MS-COCO captions to {}".format(language)
+        "name": f"{language} Language Project",
+        "short_name": f"{language}",
+        "description": f"We are translating MS-COCO captions to {langauge}",
+        "question": f"What is the {language} translation of this sentence?"
     }
     with open(f'project.json', 'w') as project_file:
         json.dump(project_info, project_file)
