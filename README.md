@@ -31,10 +31,10 @@ alone. In both cases, you'll need an API key that you can obtain by going to you
    + `question`: This is usually the text "What is the <language> translation of this sentence?", but may be written
       in any way you like, including in the source language of your project, for cultural consistency.
 
-   + `id`: This is a numeric identifier, unique to the project and may be parallel across projects within the COCOHub category 
-      i.e. within the ["MS-COCO Crowd Translation"](https://cocohub.cc/project/category/crowdtranslation/) category, the same id in 
-      another language's project will point to the same sentence in the source language, which in the "Crowd Translation" 
-      case, is English.
+   + `id`: This is a numeric identifier, unique to the project and may be parallel across projects within that specific
+      COCOHub category i.e. within the ["MS-COCO Crowd Translation"](https://cocohub.cc/project/category/crowdtranslation/)
+      category, the same id in another language's project will point to the same sentence in the source language, which in
+      the "MS-COCO Crowd Translation" case, is English.
 
    + `caption`: This is the text to be translated. Each row of your CSV will have a different sentence.
  
