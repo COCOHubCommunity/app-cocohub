@@ -2,7 +2,7 @@
 
 ### What is app-cocohub?
 
-This is project generator for COCOHub's crowdsourced translation service. It automates the creation of translation
+This is the project generator for COCOHub's crowdsourced translation service. It automates the creation of translation
 projects on COCOHub, and to do this it standardizes the data formats that a translation project uses. We use this in
 order to spend time only on the collection and verification of data, not on the minutiae of editing the same html 
 templates to change a few words, a task that is rather easy to automate.
