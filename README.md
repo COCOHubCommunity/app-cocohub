@@ -32,7 +32,7 @@ alone. In both cases, you'll need an API key that you can obtain by going to you
       in any way you like, including in the source language of your project, for cultural consistency.
 
    + `id`: This is a numeric identifier, unique to the project and may be parallel across projects within the COCOHub category 
-      i.e. within the ["Crowd Translation"](https://cocohub.cc/project/category/crowdtranslation/) category, the same id in 
+      i.e. within the ["MS-COCO Crowd Translation"](https://cocohub.cc/project/category/crowdtranslation/) category, the same id in 
       another language's project will point to the same sentence in the source language, which in the "Crowd Translation" 
       case, is English.
 
